@@ -1,0 +1,39 @@
+<u>Current Conditions for <strong>{{ city }}</strong>:</u>
+<p></p>
+
+<!-- WITHOUT CUSTOM DIRECTIVE -->
+<div class="col-md-12">
+  <div ng-show="weatherResult.cod == 200">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Last Updated: {{ convertToDate(weatherResult.dt) | date: 'MMM d, y - h:mm a' }}</h3>
+      </div>
+      <div class="panel-body">
+        <u>Current Temperature:</u> {{ convertToFahrenheit(weatherResult.main.temp) }}°F
+        <!-- <em>(High: {{ convertToFahrenheit(weatherResult.main.temp_max) }}°F </em>
+        <em>Low: {{ convertToFahrenheit(weatherResult.main.temp_min) }}°F) </em> -->
+      </div>
+      <div class="panel-body">
+        <u>Conditions:</u> {{ weatherResult.weather[0].main }}
+        - {{ weatherResult.weather[0].description }}
+      </div>
+      <div class="panel-body">
+        <u>Wind:</u> {{ convertToMPH(weatherResult.wind.speed) }} MPH
+      </div>
+    </div>
+  </div>
+  <!-- <div class="ng-cloak" ng-hide="weatherResult.cod == 200">
+    <p>Data for <strong>{{ city }}</strong> does not exist in the External API</p>
+  </div> -->
+</div>
+
+<p>
+  <a href="#/">Start New Search</a>
+</p>
+
+
+<!-- WITH CUSTOM DIRECTIVE -->
+<!-- <div class="col-md-12">
+  <weather-report convert-to-standard="convertToFahrenheit(temp)" convert-to-readable-date="convertToDate(dt)"
+  date-format="MMM d, y - h:m a" convert-to-wind="convertToMPH(w)"></weather-report>
+</div> -->

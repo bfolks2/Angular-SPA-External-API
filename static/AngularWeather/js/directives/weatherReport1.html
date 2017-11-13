@@ -1,0 +1,19 @@
+<h1>HLELLO.</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Last Updated: {{ convertToReadableDate( {dt:weatherResult.dt} ) | date: dateFormat }}</h3>
+  </div>
+  <div class="panel-body">
+    Current Temperature: {{ convertToStandard( {temp:weatherResult.main.temp} ) }}°F
+    <em>(High: {{ convertToStandard( {temp:weatherResult.main.temp_max} ) }}°F </em>
+    <em>Low: {{ convertToStandard( {temp:weatherResult.main.temp_min)} }}°F) </em>
+  </div>
+  <div class="panel-body">
+    Conditions: {{ weatherResult.weather[0].main }}
+    - {{ weatherResult.weather[0].description }}
+  </div>
+  <div class="panel-body">
+    Wind:  {{ convertToWind( {w:weatherResult.wind.speed} ) }} MPH
+  </div>
+</div>

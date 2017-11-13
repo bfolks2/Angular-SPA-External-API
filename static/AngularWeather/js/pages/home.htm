@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Current Weather by City</h2>
+    <p class="small">
+      <em>(Data is only displayed on the Current Weather page if the input city exists within the External API Weather Data)</em>
+    </p>
+    <form ng-submit="submit()">
+      <div class="form-group">
+        <input type="text" ng-model="city" class="form-control"/>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Get Weather!"/>
+    </form>
+  </div>
+</div>
+
+<p class=desc>*This site is built as a Single Page Application using AngularJS.
+It is also linked with an external weather API (openweathermap.org),
+in order to retrieve real-time weather information for large cities
+across the globe.</p>
+
+
+<!-- WITHOUT NG-SUMBIT FOR ENTER KEY
+<div class="row">
+  <div class="col-md-6" "col-md-offset-3">
+    <h4>Current Weather by City</h4>
+    <div class="form-group">
+      <input type="text" ng-model="city" class="form-control">
+    </div>
+    <a href="#/forecast" class="btn btn-primary">Get Weather</a>
+  </div>
+</div> -->
